@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* 2) Confort de lecture + rendu */
+html {
+  scroll-behavior: smooth; /* optionnel */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+          background-color: chocolate;
+          align-items: center;
+          justify-content: center;
+        }
+        .titre{
+            display: flex ; 
+            flex-direction: column;
+            background-color: aqua;
+            width: 50%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .head{
+            background-color: brown;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 10px;
+            margin: 10px;
+            width: 50%;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+aside{
+    flex: 1;
+}
+main {
+    
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    background-color: violet;
+    max-width: 20%;
+    height: auto;
+    padding: 10px;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="titre"><h1>Chart Js</h1></div>
+            <div class="head">
+                <li>
+                    <a href="#">Accueil</a>
+                    <a href="#">Inscription</a>
+                    <a href="#">Connexion</a>
+                    <a href="#">Bas de page</a>
+                </li>
+            </div>
+        </header>
+        <div class="main">
+        <main>
+            <h2>Graphique</h2>
+            <form>
+                <div class="form">
+                <label for="num">Montant du lundi</label>
+                <input type="number" name="montantLundi" id="montantLundi">
+                </div>
+                 <div class="form">
+                <label for="num">Montant du mardi</label>
+                <input type="number" name="montantMardi" id="montantMardi">
+                </div>
+                <div class="form">
+                <label for="num">Montant du mercredi</label>
+                <input type="number" name="montantMercredi" id="montantMercredi">
+                </div>
+                <div class="form">
+                <label for="num">Montant du jeudi</label>
+                <input type="number" name="montantJeudi" id="montantJeudi">
+                </div>
+                <div class="form">
+                <label for="num">Montant du vendredi</label>
+                <input type="number" name="montantVendredi" id="montantVendredi">
+                </div>
+                <div class="form">
+                <label for="num">Montant du samedi</label>
+                <input type="number" name="montantSamedi" id="montantSamedi">
+                </div>
+                <div class="form">
+                <label for="num">Montant du dimanche</label>
+                <input type="number" name="montantDimanche" id="montantDimanche">
+                </div>
+            </form>
+    </main>
+     <aside>
+                <canvas id="myChart"></canvas>
+    </aside>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart') ;
+        new Chart(ctx, {
+            type:"line" ,
+            data: {
+                labels:[ "lundi" ,"mardi", "mercredi" , "jeudi" , "vendredi" , "samedi" , "dimanche"],
+                datasets: [{
+                    label:"prix" ,
+                    data:[10,12,9,14,13] ,
+                    tension: 0.3
+                }]
+            }
+        }) ;
+    </script>
+</body>
+</html>
